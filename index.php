@@ -46,7 +46,7 @@
 			</div>
 		</div>
 	</div>
-	
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-7" style="background-color:#ce93d8">
 				<h1>Title Of Project</h1>
@@ -62,6 +62,7 @@
 				<br>
 			</div>
 		</div>
+	</div>
 	
 </body>
 </html>
