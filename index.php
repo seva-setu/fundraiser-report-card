@@ -62,19 +62,41 @@
 		<div class="row">
 			<div class="col-sm-7" style="border-block-end-style: inset;border-right-style: dotted;border-left-style: dotted;">
 				<h1>Title Of Project</h1>
-				<div class="progress">
+				<br>
+				<br>
+				<div class="progress" style="width:100%;height:3em;">
     				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#7b1fa2">
-     				 70% Achieved
     				</div>
   				</div>
+  				<div class="col-xs-7">
+  				</div>
+  				<div class="col-xs-5">
+  				<h2 style="border-style: dotted;padding: 0.5em;">70% Completed!!<h2>
+  				</div>
+  				<br>
 			</div>
 			<div class="col-sm-5 div3" style="border-block-end-style: inset;border-right-style: dotted;">
-				<h1>Area of work</h1>
+				<h1 style="text-align:center;">Area of work</h1>
+				<br>
+				<div class="col-xs-7">
+				<!-- <div id="googleMap" style="idth:100%;height:18em;"></div> -->
+				<iframe src="//www.google.com/maps/embed/v1/place?q=vaishali,delhi
+    		  	&zoom=17
+    		  	&key= AIzaSyBzhbWA-_Tvuud5mrksWgo1frG35bE5FCM" style="width:100%;height:13em;">
+  				</iframe>
+				</div>
+				<div class="col-xs-5">
+					<h3>Block:<h3>
+					<h3>District:<h3>
+					<h3>State:</h3>
+					<br>
+				</div>
 				<br>
 				<br>
 			</div>
 		</div>
 	</div>
-	
 </body>
+	<!-- Initializing Google Maps -->
+
 </html>
