@@ -44,7 +44,7 @@
 	</style>
 </head>
 <body>
-	<div class="container-fluid" style="background-color:#f3e5f5;border-block-end-style: inset;" >
+	<div class="container-fluid" style="background-color:#eceff1;border-block-end-style: dashed;" >
 		<div class="row">
 			<div class="col-xs-3">
 				<img class="img-responsive" src="img/logo.jpg" height=100 width=75 style="position: relative;left:1%;margin-top:1em;"></img>
@@ -60,7 +60,7 @@
 	</div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-7 button-wrapper" style="border-block-end-style: inset;border-right-style: dotted;border-left-style: dotted;">
+			<div class="col-sm-7 button-wrapper" style="border-block-end-style: dashed;border-right-style: dotted;border-left-style: dotted;">
 				<h1 style="margin:0 auto;padding-top: 0.5em;">Title Of Project</h1>
 				<br>
 				<br>
@@ -75,7 +75,7 @@
   				<br>
   				<br>
 			</div>
-			<div class="col-sm-5 div3" style="border-block-end-style: inset;border-right-style: dotted;">
+			<div class="col-sm-5 div3" style="border-block-end-style: dashed;border-right-style: dotted;">
 				<h1 style="text-align:center;margin:0 auto;padding-top: 0.5em;">Area of work</h1>
 				<br>
 				
