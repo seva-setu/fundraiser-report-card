@@ -17,10 +17,18 @@
 	@media screen and (min-width:320px) and (max-width:640px) and (orientation:portrait) {
 		
   		body{font-size: 10px;}
+  		.div3{
+  			border-left-style: dotted;
+  		}
+
 	}
 	@media screen and (min-width:320px) and (max-width:640px) and (orientation:landscape) {
 		
   		body{font-size: 14px;}
+  		.div3{
+  			border-left-style: dotted;
+  		}
+
 	}
 	h1{
 		font-size: 3em;
@@ -28,11 +36,15 @@
 	h2{
 		font-size: 2em;
 	}
+	hr.style6 {
+	background-color: #fff;
+	border-top: 2px dotted #8c8b8b;
+	}
 
 	</style>
 </head>
 <body>
-	<div class="container-fluid" style="background-color:#e1bee7">
+	<div class="container-fluid" style="background-color:#f3e5f5;border-block-end-style: inset;" >
 		<div class="row">
 			<div class="col-xs-3">
 				<img class="img-responsive" src="img/logo.jpg" height=100 width=75 style="position: relative;left:1%;margin-top:1em;"></img>
@@ -48,7 +60,7 @@
 	</div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-7" style="background-color:#ce93d8">
+			<div class="col-sm-7" style="border-block-end-style: inset;border-right-style: dotted;border-left-style: dotted;">
 				<h1>Title Of Project</h1>
 				<div class="progress">
     				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#7b1fa2">
@@ -56,7 +68,7 @@
     				</div>
   				</div>
 			</div>
-			<div class="col-sm-5" style="background-color:#ba68c8">
+			<div class="col-sm-5 div3" style="border-block-end-style: inset;border-right-style: dotted;">
 				<h1>Area of work</h1>
 				<br>
 				<br>
