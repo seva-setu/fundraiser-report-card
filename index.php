@@ -60,39 +60,37 @@
 	</div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-7" style="border-block-end-style: inset;border-right-style: dotted;border-left-style: dotted;">
-				<h1>Title Of Project</h1>
+			<div class="col-sm-7 button-wrapper" style="border-block-end-style: inset;border-right-style: dotted;border-left-style: dotted;">
+				<h1 style="margin:0 auto;padding-top: 0.5em;">Title Of Project</h1>
 				<br>
 				<br>
-				<div class="progress" style="width:100%;height:3em;">
+				<div class="progress" style="width:100%;height:4.35em;">
     				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#7b1fa2">
     				</div>
   				</div>
-  				<div class="col-xs-7">
-  				</div>
-  				<div class="col-xs-5">
   				<h2 style="border-style: dotted;padding: 0.5em;">70% Completed!!<h2>
-  				</div>
+  				<br>
+  				<br>
+  				<br>
+  				<br>
   				<br>
 			</div>
 			<div class="col-sm-5 div3" style="border-block-end-style: inset;border-right-style: dotted;">
-				<h1 style="text-align:center;">Area of work</h1>
+				<h1 style="text-align:center;margin:0 auto;padding-top: 0.5em;">Area of work</h1>
 				<br>
-				<div class="col-xs-7">
+				
 				<!-- <div id="googleMap" style="idth:100%;height:18em;"></div> -->
 				<iframe src="//www.google.com/maps/embed/v1/place?q=vaishali,delhi
     		  	&zoom=17
     		  	&key= AIzaSyBzhbWA-_Tvuud5mrksWgo1frG35bE5FCM" style="width:100%;height:13em;">
   				</iframe>
+				
+				<div>
+					<h2>Block:<h2>
+					<h2>District:<h2>
+					<h2>State:</h2>
+					
 				</div>
-				<div class="col-xs-5">
-					<h3>Block:<h3>
-					<h3>District:<h3>
-					<h3>State:</h3>
-					<br>
-				</div>
-				<br>
-				<br>
 			</div>
 		</div>
 	</div>
