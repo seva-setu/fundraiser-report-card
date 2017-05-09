@@ -16,6 +16,9 @@
 	.border{
 		border-right-style: dashed;
 	}
+	.btn_no{
+		border-radius: 1em;
+	}
 	/* for screens that are at least 320 pixels wide but less than or equal to 640 pixels wide */
 	@media screen and (min-width:320px) and (max-width:640px) and (orientation:portrait) {
 		
@@ -23,7 +26,9 @@
   		.border{
   			border-right-width: 0px;
   		}
-
+  		.btn_no{
+		margin-top:5% ;
+		}	
 	}
 	@media screen and (min-width:320px) and (max-width:640px) and (orientation:landscape) {
 		
@@ -31,13 +36,19 @@
   		.border{
   			border-right-width: 0px;
   		}
-
+  		.btn_no{
+		margin-top:5% ;
+		}
 	}
 	h1{
 		font-size: 3em;
 	}
 	h2{
 		font-size: 2em;
+	}
+	h4{
+		font-size: 1.7em;
+
 	}
 	hr.style6 {
 	background-color: #fff;
@@ -75,11 +86,11 @@
     				<h2 style="color:lime;top: 25%;position: relative;margin-top:0px;-">70% Completed!!</h2>
     				</div>
   				</div>
+  				<div style="border-style: dashed;text-align: center;position: relative;">
+  					<h1>Details of project</h1>
+  				</div>
   				<br>
-  				<br>
-  				<br>
-  				<br>
-  				<br>
+  				
 			</div>
 			<div class="col-sm-5 div3" style="">
 				<h1 style="text-align:center;margin:0 auto;">Area of work</h1>
@@ -97,31 +108,34 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid">
+	<div class="container-fluid" style="margin-left: 1em;margin-right: 1em;">
 		<hr style="margin: 0.5%;">
-		<div class="row">
-			<div class="col-xs-7" style="border-style: double;">
-				<h4>Text 1</h4>
+		<div class="row" style="padding: 0.5em;">
+			<div class="col-xs-8" style="">
+				<h4>Estimated number of differently abled citizens in Rajapakar block:</h4>
 			</div>
-			<div class="col-xs-5" style="border-style: double;">
-				<h4>Number 1</h4>
+			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: purple;">
+				<h4 style="color: white;">958</h4>
 			</div>
+			<div id="div4-13" class="col-xs-3"></div>
 		</div>
-		<div class="row">
-			<div class="col-xs-7" style="border-style: double;">
-				<h4>Text 2</h4>
+		<div class="row" style="padding: 0.5em;">
+			<div class="col-xs-8" style="">
+				<h4>Number of citizens facilated by Seva Setu :</h4>
 			</div>
-			<div class="col-xs-5" style="border-style: double;">
-				<h4>Number  2</h4>
+			<div id="div4-22" class="col-xs-1 btn_no" style="background-color: green;">
+				<h4 style="color: white;">600</h4>
 			</div>
+			<div id="div4-23" class="col-xs-3"></div>
 		</div>
-		<div class="row">
-			<div class="col-xs-7" style="border-style: double;">
-				<h4>Text 3</h4>
+		<div class="row" style="padding: 0.5em">
+			<div class="col-xs-8" style="">
+				<h4>Number of pension applications submitted by Seva Setu:</h4>
 			</div>
-			<div class="col-xs-5" style="border-style: double;">
-				<h4>Number  3</h4>
+			<div id="div4-32" class="col-xs-1 btn_no" style="background-color: aquamarine;">
+				<h4 style="color: white;">120</h4>
 			</div>
+			<div id="div4-33" class="col-xs-3"></div>
 		</div>
 	</div>
 
@@ -138,6 +152,12 @@
 			if ($window.width() <= 640) {
             $('#div1-1').removeClass('col-xs-1').addClass('col-xs-2');
             $('#div1-2').removeClass('col-xs-11').addClass('col-xs-10');
+            $('#div4-12').removeClass('col-xs-1').addClass('col-xs-2');
+            $('#div4-13').removeClass('col-xs-3').addClass('col-xs-2');
+            $('#div4-22').removeClass('col-xs-1').addClass('col-xs-2');
+            $('#div4-23').removeClass('col-xs-3').addClass('col-xs-2');
+            $('#div4-32').removeClass('col-xs-1').addClass('col-xs-2');
+            $('#div4-33').removeClass('col-xs-3').addClass('col-xs-2');
             console.log('resized');
         	};
 		}
