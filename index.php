@@ -71,9 +71,9 @@
 				<br>
 				<div class="progress" style="width:100%;height:4.35em;">
     				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#7b1fa2">
+    				<h2 style="color:lime;top: 25%;position: relative;margin-top:0px;-">70% Completed!!</h2>
     				</div>
   				</div>
-  				<h2 style="padding: 0.5em;border-style: dashed;">70% Completed!!</h2>
   				<br>
   				<br>
   				<br>
