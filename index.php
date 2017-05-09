@@ -19,12 +19,21 @@
 	.btn_no{
 		border-radius: 1em;
 	}
+	footer {
+            background-color: black;
+        }
+	#justpushtobottom {
+	    height: 82vh;
+	}
 	/* for screens that are at least 320 pixels wide but less than or equal to 640 pixels wide */
 	@media screen and (min-width:320px) and (max-width:640px) and (orientation:portrait) {
 		
   		body{font-size: 10px;}
   		.border{
   			border-right-width: 0px;
+  			border-block-end-style: groove;
+			border-block-end-width: 1px;
+			margin-block-end: 1px;
   		}
   		.btn_no{
 		margin-top:5% ;
@@ -35,6 +44,9 @@
   		body{font-size: 14px;}
   		.border{
   			border-right-width: 0px;
+  			border-block-end-style: groove;
+			border-block-end-width: 1px;
+			margin-block-end: 1px;
   		}
   		.btn_no{
 		margin-top:5% ;
@@ -138,8 +150,40 @@
 			<div id="div4-33" class="col-xs-3"></div>
 		</div>
 	</div>
-
-	
+	<div class="container-fluid">
+		<hr style="margin: 0.5%;">
+		<h1 style="text-align:center;margin:0 auto;">Related Links</h1>
+		<div class="row">
+			<div class="col-sm-4 border" style="text-align: center;padding: 1em;">
+			<h1>LINK 1</h1>
+			</div>
+			<div class="col-sm-4 border" style="text-align: center;padding: 1em;">
+			<h1>LINK 2</h1>
+			</div>
+			<div class="col-sm-4" style="text-align: center;padding: 1em;">
+			<h1>LINK 3</h1>
+			</div>
+			
+		</div>
+		<hr>
+	</div>
+	<footer class="footer p-t-1">
+        <div class="container">
+            <div class="pull-right">
+                <nav class="navbar" style="background:transparent; color: black;">
+                    <nav class="nav navbar-nav pull-xs-left">
+                        <a class="nav-item nav-link" href="#">About Us</a>
+                        <a class="nav-item nav-link" href="#">Join Us</a>
+                        <a class="nav-item nav-link" href="#">Donate</a>
+                    </nav>
+                </nav>
+            </div>
+            <p class="h6">
+                <h3>Seva Setu</h3>
+                <a href="www.sevasetu.org" target="_blank"></a>
+            </p>
+        </div>
+    </footer>
 
 </body>
 	<!-- Initializing Google Maps -->
