@@ -16,7 +16,6 @@
 	.border{
 		border-right-style: dashed;
 	}
-
 	/* for screens that are at least 320 pixels wide but less than or equal to 640 pixels wide */
 	@media screen and (min-width:320px) and (max-width:640px) and (orientation:portrait) {
 		
@@ -50,10 +49,12 @@
 <body>
 	<div class="container-fluid" style="background-color:#eceff1;" >
 		<div class="row">
-			<div class="col-xs-3">
-				<img class="img-responsive" src="img/logo.jpg" height=100 width=75 style="position: relative;left:1%;margin-top:1em;"></img>
+			<div id="div1-1" class="col-xs-1" style="padding: 0px;">
+				<a href="http://sevasetu.org/">
+					<img class="img-responsive" src="img/logo.jpg" alt="logo" height=100 width=75 style="position: relative;left:7%;margin-top:1em;"></img>
+				</a>
 			</div>
-			<div class="col-xs-9" style="text-align:center;">
+			<div id="div1-2" class="col-xs-11" style="text-align:center;">
 				
 				<h1 style="position: relative ;margin-top: 1%;font-family: Andale Mono,AndaleMono,monospace;font-weight: bold;">Seva Setu</h1>
 				
@@ -128,5 +129,20 @@
 
 </body>
 	<!-- Initializing Google Maps -->
+<script>
+	$(document).ready(function(){
+		var $window=$(window);
+		console.log(window.orientation);
+		function checkWidth(){
 
+			if ($window.width() <= 640) {
+            $('#div1-1').removeClass('col-xs-1').addClass('col-xs-2');
+            $('#div1-2').removeClass('col-xs-11').addClass('col-xs-10');
+            console.log('resized');
+        	};
+		}
+		checkWidth();
+		$(window).resize(checkWidth);
+	});
+</script>
 </html>
