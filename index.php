@@ -64,10 +64,10 @@
 		</div>
 	</div>
 	<div class="container-fluid">
-		<hr>
+		<hr style="margin: 0.5%;">
 		<div class="row">
 			<div class="col-sm-7 button-wrapper border" style="">
-				<h1 style="margin:0 auto;padding-top: 0.5em;">Title Of Project</h1>
+				<h1 style="margin:0 auto;">Title Of Project</h1>
 				<br>
 				<br>
 				<div class="progress" style="width:100%;height:4.35em;">
@@ -82,11 +82,11 @@
   				<br>
 			</div>
 			<div class="col-sm-5 div3" style="">
-				<h1 style="text-align:center;margin:0 auto;padding-top: 0.5em;">Area of work</h1>
+				<h1 style="text-align:center;margin:0 auto;">Area of work</h1>
 				<br>
 				<div class="row">
 					<div class="col-sm-7">
-						<img class="img-responsive" src="img/vaishali.png" style="width: 100%"></img>
+						<img class="img-responsive" src="img/vaishali_resized.png" style="width: 100%"></img>
 					</div>
 					<div class="col-sm-5">
 						<h2>Block:</h2>
@@ -98,7 +98,7 @@
 		</div>
 	</div>
 	<div class="container-fluid">
-		<hr>
+		<hr style="margin: 0.5%;">
 		<div class="row">
 			<div class="col-xs-7" style="border-style: double;">
 				<h4>Text 1</h4>
