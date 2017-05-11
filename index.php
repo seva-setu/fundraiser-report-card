@@ -3,7 +3,7 @@
 <head>
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>
@@ -12,7 +12,7 @@
 	<meta name="description" content="Progress report of sevasetu's citizen care subprogram">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
-	
+	@import url('https://fonts.googleapis.com/css?family=Vollkorn');
 	.border{
 		border-right-style: dashed;
 	}
@@ -52,13 +52,15 @@
 	}
 	h1{
 		font-size: 3em;
+		font-family: 'Slabo 27px', serif;
 	}
 	h2{
 		font-size: 2em;
+		font-family: 'Vollkorn', serif;
 	}
 	h4{
 		font-size: 1.7em;
-
+		font-family: 'Vollkorn', serif;
 	}
 	hr.style6 {
 	background-color: #fff;
@@ -77,10 +79,10 @@
 			</div>
 			<div id="div1-2" class="col-xs-11" style="text-align:center;">
 				
-				<h1 style="position: relative ;margin-top: 1%;font-family: Andale Mono,AndaleMono,monospace;font-weight: bold;">Seva Setu</h1>
+				<h1 style="position: relative ;margin-top: 1%;font-weight: bold;">Seva Setu</h1>
 				
-				<h2 style="position: relative ;font-family: Andale Mono,AndaleMono,monospace;">Progress Report: Citizen Care</h2>
-				<h2 style="position: relative ;font-family: Andale Mono,AndaleMono,monospace;">April - June 2017</h2>
+				<h2 style="position: relative ;">Progress Report: Citizen Care</h2>
+				<h2 style="position: relative ;">April - June 2017</h2>
 			</div>
 		</div>
 	</div>
