@@ -22,9 +22,7 @@
 	footer {
             background-color: black;
         }
-	#justpushtobottom {
-	    height: 82vh;
-	}
+    body{font-size: 12px;}
 	/* for screens that are at least 320 pixels wide but less than or equal to 640 pixels wide */
 	@media screen and (min-width:320px) and (max-width:640px) and (orientation:portrait) {
 		
@@ -41,7 +39,7 @@
 	}
 	@media screen and (min-width:320px) and (max-width:640px) and (orientation:landscape) {
 		
-  		body{font-size: 14px;}
+  		body{font-size: 12px;}
   		.border{
   			border-right-width: 0px;
   			border-block-end-style: groove;
@@ -70,7 +68,7 @@
 	</style>
 </head>
 <body>
-	<div class="container-fluid" style="background-color:#eceff1;" >
+	<div class="container-fluid" style="background-color:#eceff1; margin-left: 0.5em;margin-right: 0.5em;" >
 		<div class="row">
 			<div id="div1-1" class="col-xs-1" style="padding: 0px;">
 				<a href="http://sevasetu.org/">
@@ -86,7 +84,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid">
+	<div class="container-fluid" style="margin-left: 1em;margin-right: 1em;">
 		<hr style="margin: 0.5%;">
 		<div class="row">
 			<div class="col-sm-7 button-wrapper border" style="">
@@ -94,8 +92,8 @@
 				<br>
 				<br>
 				<div class="progress" style="width:100%;height:4.35em;">
-    				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#7b1fa2">
-    				<h2 style="color:lime;top: 25%;position: relative;margin-top:0px;-">70% Completed!!</h2>
+    				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#5e35b1">
+    				<h2 style="color:#ffff00;top: 25%;position: relative;margin-top:0px;-"><b>70% Completed</b></h2>
     				</div>
   				</div>
   				<div style="border-style: dashed;text-align: center;position: relative;">
@@ -126,7 +124,7 @@
 			<div class="col-xs-8" style="">
 				<h4>Estimated number of differently abled citizens in Rajapakar block:</h4>
 			</div>
-			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: purple;">
+			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
 				<h4 style="color: white;">958</h4>
 			</div>
 			<div id="div4-13" class="col-xs-3"></div>
@@ -135,7 +133,7 @@
 			<div class="col-xs-8" style="">
 				<h4>Number of citizens facilated by Seva Setu :</h4>
 			</div>
-			<div id="div4-22" class="col-xs-1 btn_no" style="background-color: green;">
+			<div id="div4-22" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
 				<h4 style="color: white;">600</h4>
 			</div>
 			<div id="div4-23" class="col-xs-3"></div>
@@ -144,7 +142,7 @@
 			<div class="col-xs-8" style="">
 				<h4>Number of pension applications submitted by Seva Setu:</h4>
 			</div>
-			<div id="div4-32" class="col-xs-1 btn_no" style="background-color: aquamarine;">
+			<div id="div4-32" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
 				<h4 style="color: white;">120</h4>
 			</div>
 			<div id="div4-33" class="col-xs-3"></div>
@@ -169,19 +167,14 @@
 	</div>
 	<footer class="footer p-t-1">
         <div class="container">
-            <div class="pull-right">
                 <nav class="navbar" style="background:transparent; color: black;">
-                    <nav class="nav navbar-nav pull-xs-left">
-                        <a class="nav-item nav-link" href="#">About Us</a>
-                        <a class="nav-item nav-link" href="#">Join Us</a>
-                        <a class="nav-item nav-link" href="#">Donate</a>
-                    </nav>
+                    	<div class="row">
+                    		<div class="col-sm-6 h6"> <h1 style="color: whitesmoke;opacity: 0.6;margin-top: 0px;">Seva Setu</h1> </div>
+                			<div class="col-sm-2 "> <a class="nav-item nav-link" href="#"><h2>About Us</h2></a></div>
+                			<div class="col-sm-2 "> <a class="nav-item nav-link" href="#"><h2>Join Us</h2></a></div>
+                			<div class="col-sm-2"> <a class="nav-item nav-link" href="#"><h2>Donate</h2></a></div>
+                    	</div>
                 </nav>
-            </div>
-            <p class="h6">
-                <h3>Seva Setu</h3>
-                <a href="www.sevasetu.org" target="_blank"></a>
-            </p>
         </div>
     </footer>
 
