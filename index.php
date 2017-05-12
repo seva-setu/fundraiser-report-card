@@ -111,7 +111,7 @@
 			<div class="col-sm-7 button-wrapper border" style="">
 				<h1 id="title" class="decMargin" style="text-align: center;">Our target</h1>
 					<br>
-					<h4 id="target_text">Ensure every differently abled person in Rajapakar block has a disability certificate and receives her/his pension.</h4>
+					<h4 id="target_text" class="centerify">Ensure every differently abled person in Rajapakar block has a disability certificate and receives her/his pension.</h4>
 					<div id="tilt"><h2 class="centerify" style="color: green;">~~~<h2></div>
 				<div class="progress" style="width:100%;height:4.4em;">
     				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#5e35b1">
@@ -134,7 +134,7 @@
 						<img class="img-responsive" src="img/vaishali_resized.png" style="width: 100%"></img>
 					</div>
 					<div class="col-sm-5" style="padding: 0px;">
-						<h4>Block: Rajapakar</h4>
+						<h4 style="margin-top: 1.1em;">Block: Rajapakar</h4>
 						<h4>District: Vaishali</h4>
 						<h4>State: Bihar</h4>
 						<h4>Approx population: 3.4 million</h4>
@@ -145,7 +145,7 @@
 		</div>
 	</div>
 	<div class="container-fluid" style="margin-left: 1em;margin-right: 1em;">
-		<hr style="margin: 0.5%;">
+		<hr class="decMargin" id="hr2">
 		<div class="row" style="padding: 0.5em;">
 			<div class="col-xs-8" style="">
 				<h4>Estimated number of differently abled citizens in Rajapakar </h4>
@@ -227,7 +227,8 @@
 	            $('#hr1').removeClass('decMargin');
 	            $('#areaofwork').removeClass('decMargin');
 	            $('#relatedlinks').removeClass('decMargin');
-	            console.log('resized');
+	            $('#hr2').removeClass('decMargin');
+	            
         	}
         	else{
         		$('#div1-1_link').remove();
