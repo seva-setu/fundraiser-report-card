@@ -86,7 +86,7 @@
 				<a href="http://sevasetu.org/" target="_blank">
 					<img class="img-responsive" src="img/logo.jpg" alt="logo" height=100 width=75 style="position: relative;left:7%;margin-top:1em;"></img>
 				</a>
-				<div id="div1-1_link">
+				<div id="div1-1_link" style="text-align: center;">
 					<div><h5><a class="nav-link" href="http://sevasetu.org/contribute-now/" target="_blank">Donate</a></h5></div>
 					<div><h5><a class="nav-link" href="http://sevasetu.org/" target="_blank">About Us</a></h5></div>
 				</div>
@@ -179,13 +179,13 @@
 		<h1 style="text-align:center;" class="decMargin" id="relatedlinks">Related Links</h1>
 		<div class="row">
 			<div class="col-sm-4 border" style="text-align: center;padding: 1em;">
-			<h1>LINK 1</h1>
+			<a href="http://epaper.prabhatkhabar.com/c/18623553" target="_blank"><img src="img/prabhat_khabar_logo.png" style="height: 3.5em;"></img></a>
 			</div>
 			<div class="col-sm-4 border" style="text-align: center;padding: 1em;">
-			<h1>LINK 2</h1>
+			<a href="https://www.ketto.org/sevasetu-citizen-care" target="_blank"><h4>Our crowd funding campaign</h4></a>
 			</div>
 			<div class="col-sm-4" style="text-align: center;padding: 1em;">
-			<h1>LINK 3</h1>
+				<a href="http://sevasetu.org/category/citizen-care/" target="_blank"><h4>Notes on our Citizen Care program</h4></a>
 			</div>
 			
 		</div>
@@ -196,10 +196,11 @@
                 <nav class="navbar" style="background:transparent; color: black;">
                     	<div class="row">
                     		<div class="col-sm-6 h6"> <h1 style="color: whitesmoke;opacity: 0.6;margin-top: 0px;">Seva Setu</h1> </div>
-                			<div class="col-sm-2 "> <a class="nav-item nav-link" href="#"><h2>About Us</h2></a></div>
-                			<div class="col-sm-2 "> <a class="nav-item nav-link" href="#"><h2>Join Us</h2></a></div>
-                			<div class="col-sm-2"> <a class="nav-item nav-link" href="#"><h2>Donate</h2></a></div>
+                			<div class="col-sm-2 "> <a class="nav-item nav-link" href="#"><h4>About Us</h4></a></div>
+                			<div class="col-sm-2 "> <a class="nav-item nav-link" href="#"><h4>Join Us</h4></a></div>
+                			<div class="col-sm-2"> <a class="nav-item nav-link" href="#"><h4>Donate</h4></a></div>
                     	</div>
+                    	<h6 style="color: silver;margin: 0px;">© 2017 sevasetu.org</h6>
                 </nav>
         </div>
     </footer>
