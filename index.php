@@ -20,8 +20,14 @@
 		border-radius: 1em;
 	}
 	footer {
-            background-color: black;
-        }
+        background-color: black;
+	}	
+	.addMargin{
+
+	}
+	.decMargin{
+		margin:1px auto;
+	}
     body{font-size: 12px;}
 	/* for screens that are at least 320 pixels wide but less than or equal to 640 pixels wide */
 	@media screen and (min-width:320px) and (max-width:640px) and (orientation:portrait) {
@@ -87,15 +93,15 @@
 		</div>
 	</div>
 	<div class="container-fluid" style="margin-left: 1em;margin-right: 1em;">
-		<hr style="margin: 0.5%;">
+		<hr class="decMargin" id="hr1">
 		<div class="row">
 			<div class="col-sm-7 button-wrapper border" style="">
-				<h1 style="margin:0 auto;">Title Of Project</h1>
+				<h1 id="title" class="decMargin">Title Of Project</h1>
 				<br>
 				<br>
-				<div class="progress" style="width:100%;height:4.35em;">
+				<div class="progress" style="width:100%;height:4.4em;">
     				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#5e35b1">
-    				<h2 style="color:#ffff00;top: 25%;position: relative;margin-top:0px;-"><b>70% Completed</b></h2>
+    				<h2 style="color:#ffff00;top: 25%;position: relative;margin-top:0px;"><b>70% Completed</b></h2>
     				</div>
   				</div>
   				<div style="border-style: dashed;text-align: center;position: relative;">
@@ -105,7 +111,7 @@
   				
 			</div>
 			<div class="col-sm-5 div3" style="">
-				<h1 style="text-align:center;margin:0 auto;">Area of work</h1>
+				<h1 style="text-align:center;" class="decMargin" id="areaofwork">Area of work</h1>
 				<br>
 				<div class="row">
 					<div class="col-sm-7">
@@ -197,6 +203,9 @@
             $('#div4-23').removeClass('col-xs-3').addClass('col-xs-2');
             $('#div4-32').removeClass('col-xs-1').addClass('col-xs-2');
             $('#div4-33').removeClass('col-xs-3').addClass('col-xs-2');
+            $('#title').removeClass('decMargin');
+            $('#hr1').removeClass('decMargin');
+            $('#areaofwork').removeClass('decMargin');
             console.log('resized');
         	};
 		}
