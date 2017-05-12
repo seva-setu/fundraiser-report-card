@@ -68,6 +68,11 @@
 		font-size: 1.7em;
 		font-family: 'Vollkorn', serif;
 	}
+	h5{
+		font-family: 'Vollkorn', serif;
+		font-size: 1.5em;
+		text-align: center;
+	}
 	hr.style6 {
 	background-color: #fff;
 	border-top: 2px dotted #8c8b8b;
@@ -78,17 +83,26 @@
 <body>
 	<div class="container-fluid" style="background-color:#eceff1; margin-left: 0.5em;margin-right: 0.5em;" >
 		<div class="row">
-			<div id="div1-1" class="col-xs-1" style="padding: 0px;">
-				<a href="http://sevasetu.org/">
+			<div id="div1-1" class="col-xs-1" style="padding: 0px;margin-right: 1em;">
+				<a href="http://sevasetu.org/" target="_blank">
 					<img class="img-responsive" src="img/logo.jpg" alt="logo" height=100 width=75 style="position: relative;left:7%;margin-top:1em;"></img>
 				</a>
+				<div id="div1-1_link">
+					<div><h5><a class="nav-link" href="http://sevasetu.org/contribute-now/" target="_blank">Donate</a></h5></div>
+					<div><h5><a class="nav-link" href="http://sevasetu.org/" target="_blank">About Us</a></h5></div>
+				</div>
 			</div>
-			<div id="div1-2" class="col-xs-11" style="text-align:center;">
+			<div id="div1-2" class="col-xs-9" style="text-align:center;">
 				
 				<h1 style="position: relative ;margin-top: 1%;font-weight: bold;">Seva Setu</h1>
 				
 				<h2 style="position: relative ;margin-top: 1%;">Progress Report: Citizen Care</h2>
 				<h2 style="position: relative ;margin-top: 1%;margin-bottom: 0.5%;">April - June 2017</h2>
+			</div>
+			<div id="div1-3" class="col-xs-1" >
+				<br>
+				<div><h5><a class="nav-link" href="http://sevasetu.org/contribute-now/" target="_blank">Donate</a></h5></div>
+				<div><h5><a class="nav-link" href="http://sevasetu.org/" target="_blank">About Us</a></h5></div>
 			</div>
 		</div>
 	</div>
@@ -101,7 +115,7 @@
 				<br>
 				<div class="progress" style="width:100%;height:4.4em;">
     				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#5e35b1">
-    				<h2 style="color:#ffff00;top: 25%;position: relative;margin-top:0px;"><b>70% Completed</b></h2>
+    				<h2 style="color:#ffff00;top: 25%;position: relative;margin-top:0px;"><b>70% completed</b></h2>
     				</div>
   				</div>
   				<div style="border-style: dashed;text-align: center;position: relative;">
@@ -130,7 +144,7 @@
 		<hr style="margin: 0.5%;">
 		<div class="row" style="padding: 0.5em;">
 			<div class="col-xs-8" style="">
-				<h4>Estimated number of differently abled citizens in Rajapakar block:</h4>
+				<h4>Estimated number of differently abled citizens in Rajapakar block</h4>
 			</div>
 			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
 				<h4 style="color: white;">958</h4>
@@ -139,16 +153,16 @@
 		</div>
 		<div class="row" style="padding: 0.5em;">
 			<div class="col-xs-8" style="">
-				<h4>Number of citizens facilated by Seva Setu :</h4>
+				<h4>Number of citizens facilated by Seva Setu </h4>
 			</div>
-			<div id="div4-22" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;">600</h4>
+			<div id="div4-22" class="col-xs-2 btn_no" style="background-color: #ba68c8;">
+				<h4 style="color: white;">600 and counting...</h4>
 			</div>
-			<div id="div4-23" class="col-xs-3"></div>
+			<div id="div4-23" class="col-xs-2"></div>
 		</div>
 		<div class="row" style="padding: 0.5em">
 			<div class="col-xs-8" style="">
-				<h4>Number of pension applications submitted by Seva Setu:</h4>
+				<h4>Number of pension applications submitted by Seva Setu</h4>
 			</div>
 			<div id="div4-32" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
 				<h4 style="color: white;">120</h4>
@@ -195,19 +209,29 @@
 		function checkWidth(){
 
 			if ($window.width() <= 640) {
+			$('#div1-3').removeClass('col-xs-1');
+			$('#div1-3').toggle();
             $('#div1-1').removeClass('col-xs-1').addClass('col-xs-2');
-            $('#div1-2').removeClass('col-xs-11').addClass('col-xs-10');
             $('#div4-12').removeClass('col-xs-1').addClass('col-xs-2');
             $('#div4-13').removeClass('col-xs-3').addClass('col-xs-2');
-            $('#div4-22').removeClass('col-xs-1').addClass('col-xs-2');
-            $('#div4-23').removeClass('col-xs-3').addClass('col-xs-2');
+            $('#div4-22').removeClass('col-xs-2').addClass('col-xs-4');
+            $('#div4-23').removeClass('col-xs-2');
             $('#div4-32').removeClass('col-xs-1').addClass('col-xs-2');
             $('#div4-33').removeClass('col-xs-3').addClass('col-xs-2');
             $('#title').removeClass('decMargin');
             $('#hr1').removeClass('decMargin');
             $('#areaofwork').removeClass('decMargin');
+            
             console.log('resized');
+        	}
+        	else{
+        		$('#div1-1_link').remove();
+        		$('#title').addClass('decMargin');
+           		$('#hr1').addClass('decMargin');
+            	$('#areaofwork').addClass('decMargin');
+            	
         	};
+        	
 		}
 		checkWidth();
 		$(window).resize(checkWidth);
