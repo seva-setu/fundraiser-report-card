@@ -87,8 +87,8 @@
 				
 				<h1 style="position: relative ;margin-top: 1%;font-weight: bold;">Seva Setu</h1>
 				
-				<h2 style="position: relative ;">Progress Report: Citizen Care</h2>
-				<h2 style="position: relative ;">April - June 2017</h2>
+				<h2 style="position: relative ;margin-top: 1%;">Progress Report: Citizen Care</h2>
+				<h2 style="position: relative ;margin-top: 1%;margin-bottom: 0.5%;">April - June 2017</h2>
 			</div>
 		</div>
 	</div>
