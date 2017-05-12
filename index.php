@@ -137,8 +137,8 @@
 						<h4 style="margin-top: 1.1em;">Block: Rajapakar</h4>
 						<h4>District: Vaishali</h4>
 						<h4>State: Bihar</h4>
-						<h4>Approx population: 3.4 million</h4>
-						<h4>Approx. area: 2000 sq. km. </h4>
+						<h4>Population: 3.4 L</h4>
+						<h4>Area: 2000 sq. km. </h4>
 					</div>
 				</div>
 			</div>
