@@ -22,9 +22,6 @@
 	footer {
         background-color: black;
 	}	
-	.addMargin{
-
-	}
 	.decMargin{
 		margin:1px auto;
 	}
@@ -42,6 +39,9 @@
   		.btn_no{
 		margin-top:5% ;
 		}	
+		.centerify{
+		text-align: center;
+		}
 	}
 	@media screen and (min-width:320px) and (max-width:640px) and (orientation:landscape) {
 		
@@ -55,6 +55,9 @@
   		.btn_no{
 		margin-top:5% ;
 		}
+		.centerify{
+		text-align: center;
+		}
 	}
 	h1{
 		font-size: 3em;
@@ -65,14 +68,10 @@
 		font-family: 'Vollkorn', serif;
 	}
 	h4{
-		font-size: 1.7em;
-		font-family: 'Vollkorn', serif;
-	}
-	h5{
-		font-family: 'Vollkorn', serif;
 		font-size: 1.5em;
-		text-align: center;
+		font-family: 'Vollkorn', serif;
 	}
+	
 	hr.style6 {
 	background-color: #fff;
 	border-top: 2px dotted #8c8b8b;
@@ -101,8 +100,8 @@
 			</div>
 			<div id="div1-3" class="col-xs-1" >
 				<br>
-				<div><h5><a class="nav-link" href="http://sevasetu.org/contribute-now/" target="_blank">Donate</a></h5></div>
-				<div><h5><a class="nav-link" href="http://sevasetu.org/" target="_blank">About Us</a></h5></div>
+				<div><h4 class="centerify"><a class="nav-link" href="http://sevasetu.org/contribute-now/" target="_blank">Donate</a></h5></div>
+				<div><h4 class="centerify"><a class="nav-link" href="http://sevasetu.org/" target="_blank">About Us</a></h5></div>
 			</div>
 		</div>
 	</div>
@@ -110,16 +109,18 @@
 		<hr class="decMargin" id="hr1">
 		<div class="row">
 			<div class="col-sm-7 button-wrapper border" style="">
-				<h1 id="title" class="decMargin">Title Of Project</h1>
-				<br>
-				<br>
+				<h1 id="title" class="decMargin" style="text-align: center;">Our target</h1>
+					<br>
+					<h4 id="target_text">Ensure every differently abled person in Rajapakar block has a disability certificate and receives her/his pension.</h4>
+					<div id="tilt"><h2 class="centerify" style="color: green;">~~~<h2></div>
 				<div class="progress" style="width:100%;height:4.4em;">
     				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#5e35b1">
     				<h2 style="color:#ffff00;top: 25%;position: relative;margin-top:0px;"><b>70% completed</b></h2>
     				</div>
   				</div>
-  				<div style="border-style: dashed;text-align: center;position: relative;">
-  					<h1>Details of project</h1>
+  				<div style="position: relative;" class="centerify">
+  					<h4>The utilization of pensions meant for the differently abled is less than 50% in most states. In Bihar specifically, <a href=”http://www.disabilityaffairs.gov.in/upload/uploadfiles/files/disabilityinindia2011data.pdf”> 55% of the intended beneficiaries do not even possess disability certificates</a>, a pre-requisite to receiving their pensions. We hand-hold people in obtaining these certificates and pensions.</h4>
+  					
   				</div>
   				<br>
   				
@@ -127,14 +128,17 @@
 			<div class="col-sm-5 div3" style="">
 				<h1 style="text-align:center;" class="decMargin" id="areaofwork">Area of work</h1>
 				<br>
+				<br>
 				<div class="row">
 					<div class="col-sm-7">
 						<img class="img-responsive" src="img/vaishali_resized.png" style="width: 100%"></img>
 					</div>
-					<div class="col-sm-5">
-						<h2>Block:</h2>
-						<h2>District:</h2>
-						<h2>State:</h2>
+					<div class="col-sm-5" style="padding: 0px;">
+						<h4>Block: Rajapakar</h4>
+						<h4>District: Vaishali</h4>
+						<h4>State: Bihar</h4>
+						<h4>Approx population: 3.4 million</h4>
+						<h4>Approx. area: 2000 sq. km. </h4>
 					</div>
 				</div>
 			</div>
@@ -144,16 +148,16 @@
 		<hr style="margin: 0.5%;">
 		<div class="row" style="padding: 0.5em;">
 			<div class="col-xs-8" style="">
-				<h4>Estimated number of differently abled citizens in Rajapakar block</h4>
+				<h4>Estimated number of differently abled citizens in Rajapakar </h4>
 			</div>
 			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;">958</h4>
+				<h4 style="color: white;">368</h4>
 			</div>
 			<div id="div4-13" class="col-xs-3"></div>
 		</div>
 		<div class="row" style="padding: 0.5em;">
 			<div class="col-xs-8" style="">
-				<h4>Number of citizens facilated by Seva Setu </h4>
+				<h4>Number of differently abled citizens enabled by Seva Setu </h4>
 			</div>
 			<div id="div4-22" class="col-xs-2 btn_no" style="background-color: #ba68c8;">
 				<h4 style="color: white;">600 and counting...</h4>
@@ -162,17 +166,17 @@
 		</div>
 		<div class="row" style="padding: 0.5em">
 			<div class="col-xs-8" style="">
-				<h4>Number of pension applications submitted by Seva Setu</h4>
+				<h4>Number of citizens whose pension applications have been submitted</h4>
 			</div>
 			<div id="div4-32" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;">120</h4>
+				<h4 style="color: white;">220</h4>
 			</div>
 			<div id="div4-33" class="col-xs-3"></div>
 		</div>
 	</div>
 	<div class="container-fluid">
 		<hr style="margin: 0.5%;">
-		<h1 style="text-align:center;margin:0 auto;">Related Links</h1>
+		<h1 style="text-align:center;" class="decMargin" id="relatedlinks">Related Links</h1>
 		<div class="row">
 			<div class="col-sm-4 border" style="text-align: center;padding: 1em;">
 			<h1>LINK 1</h1>
@@ -209,27 +213,28 @@
 		function checkWidth(){
 
 			if ($window.width() <= 640) {
-			$('#div1-3').removeClass('col-xs-1');
-			$('#div1-3').toggle();
-            $('#div1-1').removeClass('col-xs-1').addClass('col-xs-2');
-            $('#div4-12').removeClass('col-xs-1').addClass('col-xs-2');
-            $('#div4-13').removeClass('col-xs-3').addClass('col-xs-2');
-            $('#div4-22').removeClass('col-xs-2').addClass('col-xs-4');
-            $('#div4-23').removeClass('col-xs-2');
-            $('#div4-32').removeClass('col-xs-1').addClass('col-xs-2');
-            $('#div4-33').removeClass('col-xs-3').addClass('col-xs-2');
-            $('#title').removeClass('decMargin');
-            $('#hr1').removeClass('decMargin');
-            $('#areaofwork').removeClass('decMargin');
-            
-            console.log('resized');
+				$('#div1-3').removeClass('col-xs-1');
+				$('#div1-3').remove();
+	            $('#div1-1').removeClass('col-xs-1').addClass('col-xs-2');
+	            $('#div4-12').removeClass('col-xs-1').addClass('col-xs-2');
+	            $('#div4-13').removeClass('col-xs-3').addClass('col-xs-2');
+	            $('#div4-22').removeClass('col-xs-2').addClass('col-xs-4');
+	            $('#div4-23').removeClass('col-xs-2');
+	            $('#div4-32').removeClass('col-xs-1').addClass('col-xs-2');
+	            $('#div4-33').removeClass('col-xs-3').addClass('col-xs-2');
+	            $('#title').removeClass('decMargin');
+	            $('#hr1').removeClass('decMargin');
+	            $('#areaofwork').removeClass('decMargin');
+	            $('#relatedlinks').removeClass('decMargin');
+	            console.log('resized');
         	}
         	else{
         		$('#div1-1_link').remove();
         		$('#title').addClass('decMargin');
            		$('#hr1').addClass('decMargin');
             	$('#areaofwork').addClass('decMargin');
-            	
+            	$('#tilt').remove();
+
         	};
         	
 		}
