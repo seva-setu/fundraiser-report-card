@@ -1,0 +1,39 @@
+	/* for changing margin and hr styles + overidding default text size in h1,h2,h4 + adding font style */
+	/*
+	Font size used for headings in Slabo 27px while fro other text size it's Vollkron
+	.decMargin---> adding margin on desktop mode 
+	
+	*/
+	@import url('https://fonts.googleapis.com/css?family=Vollkorn');
+		
+		footer {
+	        background-color: black;
+		}	
+		
+	    body{
+	    	font-size: 12px;
+	    }
+		
+		h1{
+			font-size: 3em;
+			font-family: 'Slabo 27px', serif;
+		}
+		h2{
+			font-size: 2em;
+			font-family: 'Vollkorn', serif;
+		}
+		h4{
+			font-size: 1.5em;
+			font-family: 'Vollkorn', serif;
+		}
+		hr.style6 {
+		background-color: #fff;
+		border-top: 2px dotted #8c8b8b;
+		}
+		.decMargin{
+			margin:1px auto;
+		}
+		.btn_no{
+		border-radius: 1em;
+		}
+		
