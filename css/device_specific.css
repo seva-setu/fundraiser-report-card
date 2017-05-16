@@ -1,0 +1,42 @@
+	/* Device,orientation specific changes in font-size, border. margins etc. */
+
+	/* for screens that are at least 320 pixels wide but less than or equal to 640 pixels wide */
+	/*
+	.border-------> to remove right border during stacking of col + adding border/margin at the end
+	.btn_no-------> to restyle buttons used in div4 on mobile view
+	.centerify----> to align target description text in the center
+	*/
+	
+	@media screen and (min-width:320px) and (max-width:640px) and (orientation:portrait) {
+		
+  		body{font-size: 10px;}
+  		.border{
+  			border-right-width: 0px;
+  			border-block-end-style: groove;
+			border-block-end-width: 1px;
+			margin-block-end: 1px;
+  		}
+  		.btn_no{
+		margin-top:5% ;
+		}	
+		.centerify{
+		text-align: center;
+		}
+	}
+
+	@media screen and (min-width:320px) and (max-width:640px) and (orientation:landscape) {
+		
+  		body{font-size: 12px;}
+  		.border{
+  			border-right-width: 0px;
+  			border-block-end-style: groove;
+			border-block-end-width: 1px;
+			margin-block-end: 1px;
+  		}
+  		.btn_no{
+		margin-top:5% ;
+		}
+		.centerify{
+		text-align: center;
+		}
+	}
