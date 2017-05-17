@@ -1,3 +1,45 @@
+<?php
+	$url = "https://docs.google.com/spreadsheets/d/1naps3I3O9I_Ncw-F3wO3Bcmt-WU8uBVujI5jfgDzzAw/pub?output=csv";
+	
+	$data = get_csv_content($url);
+	$is_valid = validate_data($data);
+	
+	$data_to_publish = array(1014, 817, 93, 6);
+	
+	if($is_valid){
+		$data_to_publish[0]=$data[0][2];
+		$data_to_publish[1]=$data[1][2];
+		$data_to_publish[2]=$data[2][2];
+		$data_to_publish[3]=$data[4][2];
+		if(remove_html_tags($data_to_publish)){
+				$data_to_publish[3]=(int)(($data_to_publish[3]/100)*($data_to_publish[1]));
+		}	
+	}
+	
+	function get_csv_content($spreadsheet_url){
+		if(!ini_set('default_socket_timeout', 15)) 
+		echo "<!-- unable to change socket timeout -->";
+		if (($handle = fopen($spreadsheet_url, "r")) !== FALSE) {
+			while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+				$spreadsheet_data[] = $data;
+			}
+			fclose($handle);
+			return $spreadsheet_data;
+		}
+	}
+	
+	function validate_data($data){
+		return true;
+	}
+
+	function remove_html_tags($data_to_publish){
+		$data_to_publish[0]=(int)strip_tags($data_to_publish[0]);
+		$data_to_publish[1]=(int)strip_tags($data_to_publish[1]);
+		$data_to_publish[2]=(int)strip_tags($data_to_publish[2]);
+		$data_to_publish[3]=(int)strip_tags($data_to_publish[3]);
+		return true;
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,9 +100,10 @@
 						<h2 class="centerify" style="color: green;">~~~</h2>
 				</div>
 				<!-- Progress bar-->
-				<div class="progress" style="width:100%;height:4.4em;">
-    				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color:#5e35b1">
-    					<h2 style="color:#ffff00;top: 25%;position: relative;margin-top:0px;"><b>70% completed</b></h2>
+				<div id="progress-bar" class="progress" style="width:100%;height:4.4em;">
+					
+    				<div class="progress-bar progress-bar-striped active" id="progress-bar-bg" role="progressbar" aria-valuenow=<?php echo $data_to_publish[2]; ?> aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $data_to_publish[2]; ?>%;background-color:#5e35b1;height: 4.4em;">
+    				<h2 style="color:#ffff00;top: 25%;position: relative;margin-top:0px;"><b id="completed"><?php echo $data_to_publish[2]; ?>% completed</b></h2>
     				</div>
   				</div>
   				<!-- Target details-->
@@ -97,7 +140,7 @@
 				<h4>Estimated number of differently abled citizens in Rajapakar </h4>
 			</div>
 			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;"><b>368</b></h4>
+				<h4 style="color: white;"><b><?php echo $data_to_publish[0]; ?></b></h4>
 			</div>
 			<div id="div4-13" class="col-xs-3"></div>
 		</div>
@@ -106,18 +149,27 @@
 				<h4>Number of differently abled citizens enabled by Seva Setu </h4>
 			</div>
 			<div id="div4-22" class="col-xs-2 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;"><b>600 and counting...</b></h4>
+				<h4 style="color: white;"><b><?php echo $data_to_publish[1]; ?> and counting...</b></h4>
 			</div>
 			<div id="div4-23" class="col-xs-2"></div>
 		</div>
 		<div class="row" style="padding: 0.1em">
 			<div class="col-xs-8" style="">
-				<h4>Number of citizens whose pension applications have been submitted</h4>
+				<h4>Percentage (of the estimated people) supported by Seva Setu</h4>
 			</div>
 			<div id="div4-32" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;"><b>220</b></h4>
+				<h4 style="color: white;"><b><?php echo $data_to_publish[2]; ?>%</b></h4>
 			</div>
 			<div id="div4-33" class="col-xs-3"></div>
+		</div>
+		<div class="row" style="padding: 0.1em">
+			<div class="col-xs-8" style="">
+				<h4>Number of citizens whose pension applications have been submitted</h4>
+			</div>
+			<div id="div4-42" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
+				<h4 style="color: white;"><b><?php echo $data_to_publish[3]; ?></b></h4>
+			</div>
+			<div id="div4-43" class="col-xs-3"></div>
 		</div>
 	</div>
 	<!-- Division 5-->
@@ -150,9 +202,9 @@
                 <nav class="navbar" style="background:transparent; color: black;">
                     	<div class="row">
                     		<div class="col-sm-6 h6"> <h1 style="color: whitesmoke;opacity: 0.6;margin-top: 0px;">Seva Setu</h1> </div>
-                			<div class="col-sm-2 "> <a class="nav-item nav-link" href="http://sevasetu.org/" target="_blank"><h4>About Us</h4></a></div>
-                			<div class="col-sm-2 "> <a class="nav-item nav-link" href="http://sevasetu.org/"><h4>Join Us</h4></a></div>
-                			<div class="col-sm-2"> <a class="nav-item nav-link" href="http://sevasetu.org/contribute-now/" target="_blank"><h4>Donate</h4></a></div>
+                			<div class="col-sm-2 "> <a class="nav-item nav-link" href="http://sevasetu.org/" target="_blank"><h4 style="color: ghostwhite;"><u>About Us</u></h4></a></div>
+                			<div class="col-sm-2 "> <a class="nav-item nav-link" href="http://sevasetu.org/"><h4 style="color: ghostwhite;"><u>Join Us</u></h4></a></div>
+                			<div class="col-sm-2"> <a class="nav-item nav-link" href="http://sevasetu.org/contribute-now/" target="_blank"><h4 style="color: ghostwhite;"><u>Donate</u></h4></a></div>
                     	</div>
                     	<h6 style="color: silver;margin: 0px;">© 2017 sevasetu.org</h6>
                 </nav>
@@ -164,7 +216,11 @@
 <script>
 	$(document).ready(function(){
 		var $window=$(window);
-		console.log(window.orientation);
+		console.log($('#progress-bar').css('top'));
+		console.log($('#progress-bar-bg').css('top'));
+		console.log($('body').offset());
+		console.log($(document).scrollTop());
+		$('#progress-bar-bg').css($('#progress-bar').offset());
 		function checkWidth(){
 
 			if ($window.width() <= 640) {
@@ -178,12 +234,14 @@
 	            $('#div4-23').remove();
 	            $('#div4-32').removeClass('col-xs-1').addClass('col-xs-2');
 	            $('#div4-33').removeClass('col-xs-3').addClass('col-xs-2');
+	            $('#div4-42').removeClass('col-xs-1').addClass('col-xs-2');
+	            $('#div4-43').removeClass('col-xs-3').addClass('col-xs-2');
 	            $('#title').removeClass('decMargin');
 	            $('#hr1').removeClass('decMargin');
 	            $('#areaofwork').removeClass('decMargin');
 	            $('#relatedlinks').removeClass('decMargin');
 	            $('#hr2').removeClass('decMargin');
-	            
+	            $('#completed').css("font-size","small");
         	}
         	else{
         		$('#div1-1_link').remove();
