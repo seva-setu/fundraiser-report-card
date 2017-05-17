@@ -12,7 +12,7 @@
   		body{font-size: 10px;}
   		.border{
   			border-right-width: 0px;
-  			border-block-end-style: groove;
+  			border-block-end-style: dotted;
 			border-block-end-width: 1px;
 			margin-block-end: 1px;
   		}
@@ -29,7 +29,7 @@
   		body{font-size: 12px;}
   		.border{
   			border-right-width: 0px;
-  			border-block-end-style: groove;
+  			border-block-end-style: dotted;
 			border-block-end-width: 1px;
 			margin-block-end: 1px;
   		}

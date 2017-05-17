@@ -79,11 +79,11 @@
 						<img class="img-responsive" src="img/vaishali_resized.png" style="width: 100%">
 					</div>
 					<div class="col-sm-5" style="padding: 0.1em;">
-						<h4 style="margin-top: 1.1em;">Block: Rajapakar</h4>
-						<h4>District: Vaishali</h4>
-						<h4>State: Bihar</h4>
-						<h4>Population: 3.4 L</h4>
-						<h4>Area: 2000 sq. km. </h4>
+						<h4 style="margin-top: 1.1em;"><b>Block:</b> Rajapakar</h4>
+						<h4><b>District:</b> Vaishali</h4>
+						<h4><b>State:</b> Bihar</h4>
+						<h4><b>Population:</b> 3.4 L</h4>
+						<h4><b>Area:</b> 2000 sq. km. </h4>
 					</div>
 				</div>
 			</div>
@@ -97,7 +97,7 @@
 				<h4>Estimated number of differently abled citizens in Rajapakar </h4>
 			</div>
 			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;">368</h4>
+				<h4 style="color: white;"><b>368</b></h4>
 			</div>
 			<div id="div4-13" class="col-xs-3"></div>
 		</div>
@@ -106,7 +106,7 @@
 				<h4>Number of differently abled citizens enabled by Seva Setu </h4>
 			</div>
 			<div id="div4-22" class="col-xs-2 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;">600 and counting...</h4>
+				<h4 style="color: white;"><b>600 and counting...</b></h4>
 			</div>
 			<div id="div4-23" class="col-xs-2"></div>
 		</div>
@@ -115,7 +115,7 @@
 				<h4>Number of citizens whose pension applications have been submitted</h4>
 			</div>
 			<div id="div4-32" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;">220</h4>
+				<h4 style="color: white;"><b>220</b></h4>
 			</div>
 			<div id="div4-33" class="col-xs-3"></div>
 		</div>
@@ -127,15 +127,18 @@
 		<div class="row">
 
 			<div class="col-sm-4 border" style="text-align: center;padding: 1em;">
-				<a href="http://epaper.prabhatkhabar.com/c/18623553" target="_blank"><img src="img/prabhat_khabar_logo.png" style="height: 3.5em;"></a>
+				<h4 style="color: #00695c;">Our effort gets covered by a leading daily</h4>
+				<a href="http://epaper.prabhatkhabar.com/c/18623553" target="_blank"><img src="img/prabhat_khabar_logo.png" style="height: 7em;"></a>
 			</div>
 
 			<div class="col-sm-4 border" style="text-align: center;padding: 1em;">
-				<a href="https://www.ketto.org/sevasetu-citizen-care" target="_blank"><h4>Our crowd funding campaign</h4></a>
+				<h4 style="color: #00695c;">Our crowd funding campaign</h4>
+				<a href="https://www.ketto.org/sevasetu-citizen-care" target="_blank"><img src="img/ketto.png" style="height: 7em;"></a>
 			</div>
 
 			<div class="col-sm-4" style="text-align: center;padding: 1em;">
-				<a href="http://sevasetu.org/category/citizen-care/" target="_blank"><h4>Notes on our Citizen Care program</h4></a>
+				<h4 style="color: #00695c;">Notes on our Citizen Care program</h4>
+				<a href="http://sevasetu.org/category/citizen-care/" target="_blank"><img src="img/notes.png" style="height: 7em;"></a>
 			</div>
 			
 		</div>
