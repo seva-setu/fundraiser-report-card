@@ -104,9 +104,9 @@
 				<div id="progress-bar" class="progress" style="width:100%;height:4.4em;">
 					
     				<div class="progress-bar progress-bar-striped active" id="progress-bar-bg" role="progressbar" aria-valuenow=<?php echo $data_to_publish[2]; ?> aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $data_to_publish[2]; ?>%;background-color:#5e35b1;height: 4.4em;">
-    				<h2 style="color:#ffff00;top: 25%;position: relative;margin-top:0px;"><b id="completed"><?php echo $data_to_publish[2]; ?>% completed</b></h2>
     				</div>
   				</div>
+  				<h2 style="color:#ffff00;margin-top: -55px;margin-bottom: 20px;text-align: center;"><b id="completed" style="text-shadow: 1px 1px 1px #FF0000;"><?php echo $data_to_publish[2]; ?>% completed</b></h2>
   				<!-- Mobile Progress bar -->
   				<div id="mob-progress-bar" class="row" style="text-align: center;">
 					<div id="example"  class="pie-title-center col-sm-12" data-percent=<?php echo $data_to_publish[2]; ?> style="style=display: inline-block;width: 50%;">
@@ -142,7 +142,7 @@
 	<!-- Division 4-->
 	<div class="container-fluid">
 		<hr class="decMargin" id="hr2">
-		<div class="row" style="padding: 0.1em;">
+		<div class="row" style="padding: 0.3em;">
 			<div class="col-xs-8" style="">
 				<h4>Estimated number of differently abled citizens in Rajapakar </h4>
 			</div>
@@ -152,7 +152,7 @@
 			<div id="div4-13" class="col-xs-3"></div>
 		</div>
 		<hr id="line1">
-		<div class="row" style="padding: 0.1em;">
+		<div class="row" style="padding: 0.3em;">
 			<div class="col-xs-8" style="">
 				<h4>Number of differently abled citizens enabled by Seva Setu </h4>
 			</div>
@@ -162,7 +162,7 @@
 			<div id="div4-23" class="col-xs-2"></div>
 		</div>
 		<hr id="line2">
-		<div class="row" style="padding: 0.1em">
+		<div class="row" style="padding: 0.3em">
 			<div class="col-xs-8" style="">
 				<h4>Number of citizens whose pension applications have been submitted</h4>
 			</div>
