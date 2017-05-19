@@ -56,6 +56,13 @@
 	</title>
 	<meta name="description" content="Progress report of sevasetu's citizen care subprogram">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	.popover{
+		background-color: black;
+		color: white;
+	}
+	</style>
+
 </head>
 <body>
 	<!-- Division 1-->
@@ -101,15 +108,17 @@
 						<h2 class="centerify" style="color: green;">~~~</h2>
 				</div>
 				<!-- Progress bar-->
-				<div id="progress-bar" class="progress" style="width:100%;height:4.4em;">
+				<div id="progress-bar">
+				<div  class="progress" style="width:100%;height:4.4em;">
 					
     				<div class="progress-bar progress-bar-striped active" id="progress-bar-bg" role="progressbar" aria-valuenow=<?php echo $data_to_publish[2]; ?> aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $data_to_publish[2]; ?>%;background-color:#5e35b1;height: 4.4em;">
     				</div>
   				</div>
   				<h2 style="color:#ffff00;margin-top: -55px;margin-bottom: 20px;text-align: center;"><b id="completed" style="text-shadow: 1px 1px 1px #FF0000;"><?php echo $data_to_publish[2]; ?>% completed</b></h2>
+  				</div>
   				<!-- Mobile Progress bar -->
   				<div id="mob-progress-bar" class="row" style="text-align: center;">
-					<div id="example"  class="pie-title-center col-sm-12" data-percent=<?php echo $data_to_publish[2]; ?> style="style=display: inline-block;width: 50%;">
+					<div id="pie"  class="pie-title-center col-sm-12" data-percent=<?php echo $data_to_publish[2]; ?> style="style=display: inline-block;width: 50%;">
 		 				 <span class="pie-value"><h4><?php echo $data_to_publish[2]; ?>% Completed</h4></span>
 					</div>
 				</div>
@@ -141,10 +150,10 @@
 	</div>
 	<!-- Division 4-->
 	<div class="container-fluid">
-		<hr class="decMargin" id="hr2">
+		<hr class="decMargin " id="hr2" style="border-style: dashed;border-width: 1px;">
 		<div class="row" style="padding: 0.3em;">
 			<div class="col-xs-8" style="">
-				<h4>Estimated number of differently abled citizens in Rajapakar </h4>
+				<h4>Estimated number of differently abled citizens in Rajapakar<a href="#"  data-toggle="popover" data-trigger="hover" data-content="hover-content#1"><sup style="color: blue;">ⓘ</sup></a></h4>
 			</div>
 			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: #ba68c8;top: -1.3em;">
 				<h4 style="color: white;"><b><?php echo $data_to_publish[0]; ?></b></h4>
@@ -154,10 +163,10 @@
 		<hr id="line1">
 		<div class="row" style="padding: 0.3em;">
 			<div class="col-xs-8" style="">
-				<h4>Number of differently abled citizens enabled by Seva Setu </h4>
+				<h4>Number of differently abled citizens enabled by Seva Setu</h4>
 			</div>
 			<div id="div4-22" class="col-xs-2 btn_no" style="background-color: #ba68c8;top: -1.3em;">
-				<h4 style="color: white;"><b><?php echo $data_to_publish[1]; ?> (<?php echo $data_to_publish[2]; ?>% of <?php echo $data_to_publish[0]; ?>) and counting...</b></h4>
+				<h4 ><b style="color: white;"><?php echo $data_to_publish[1]; ?>  and counting..</b><a href="#"  data-toggle="popover" data-trigger="hover" data-content=" <?php echo $data_to_publish[2]; ?>% of <?php echo $data_to_publish[0]; ?>" data-placement="top" ><sup style="color: white;">ⓘ</sup></a></h4>
 			</div>
 			<div id="div4-23" class="col-xs-2"></div>
 		</div>
@@ -167,14 +176,14 @@
 				<h4>Number of citizens whose pension applications have been submitted</h4>
 			</div>
 			<div id="div4-32" class="col-xs-2 btn_no" style="background-color: #ba68c8;top: -1.3em;">
-				<h4 style="color: white;"><b><?php echo (int)(($data_to_publish[3]*$data_to_publish[1])/100); ?> (<?php echo $data_to_publish[3]; ?>% of <?php echo $data_to_publish[1]; ?>)</b></h4>
+				<h4 style="color: white;"><b><?php echo (int)(($data_to_publish[3]*$data_to_publish[1])/100); ?><a href="#"  data-toggle="popover" data-trigger="hover" data-content="<?php echo $data_to_publish[3]; ?>% of <?php echo $data_to_publish[1]; ?>" data-placement="top" ><sup style="color: white;">ⓘ</sup></a> </b></h4>
 			</div>
 			<div id="div4-33" class="col-xs-2"></div>
 		</div>
 	</div>
 	<!-- Division 5-->
 	<div class="container-fluid">
-		<hr style="margin: 0.5%;">
+		<hr style="margin: 0.5%;border-style: dashed;border-width: 1px;">
 		<h1 style="text-align:center;" class="decMargin" id="relatedlinks">Related Links</h1>
 		<div class="row">
 
@@ -215,8 +224,8 @@
 <script>
 	$(document).ready(function(){
 		var $window=$(window);
-		$('#example').pieChart();
-
+		$('#pie').pieChart();
+		$('[data-toggle="popover"]').popover(); 
 		
 		function checkWidth(){
 
