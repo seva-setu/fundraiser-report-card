@@ -1,5 +1,6 @@
+
 <?php
-	$url = "https://docs.google.com/spreadsheets/d/1naps3I3O9I_Ncw-F3wO3Bcmt-WU8uBVujI5jfgDzzAw/pub?output=csv";
+	$url = "https://docs.google.com/spreadsheets/d/1uNS2lhY-MLEkGuSkDDowfWMA21CgIh29sOJ-AtoGmQI/pub?output=csv";
 	
 	$data = get_csv_content($url);
 	$is_valid = validate_data($data);
@@ -11,9 +12,8 @@
 		$data_to_publish[1]=$data[1][2];
 		$data_to_publish[2]=$data[2][2];
 		$data_to_publish[3]=$data[4][2];
-		if(remove_html_tags($data_to_publish)){
-				$data_to_publish[3]=(int)(($data_to_publish[3]/100)*($data_to_publish[1]));
-		}	
+		$var=remove_html_tags($data_to_publish);
+				
 	}
 	
 	function get_csv_content($spreadsheet_url){
@@ -47,14 +47,23 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/device_specific.css">
 	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/mob-progress-bar.css">
   	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="script/pie-chart.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>
 		Progress report
 	</title>
 	<meta name="description" content="Progress report of sevasetu's citizen care subprogram">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	.popover{
+		background-color: black;
+		color: white;
+	}
+	</style>
+
 </head>
 <body>
 	<!-- Division 1-->
@@ -97,18 +106,26 @@
 				<br>
 				<h4 id="target_text" class="centerify">Ensure every differently abled person in Rajapakar block has a disability certificate and receives her/his pension.</h4>
 				<div id="tilt">
-						<h2 class="centerify" style="color: green;">~~~</h2>
+						<div class="centerify" style="color: green;font-size: 25px;font-family: 'Vollkorn', serif;">~~~</div>
 				</div>
 				<!-- Progress bar-->
-				<div id="progress-bar" class="progress" style="width:100%;height:4.4em;">
+				<div id="progress-bar">
+				<div  class="progress" style="width:100%;height:4.4em;">
 					
     				<div class="progress-bar progress-bar-striped active" id="progress-bar-bg" role="progressbar" aria-valuenow=<?php echo $data_to_publish[2]; ?> aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $data_to_publish[2]; ?>%;background-color:#5e35b1;height: 4.4em;">
-    				<h2 style="color:#ffff00;top: 25%;position: relative;margin-top:0px;"><b id="completed"><?php echo $data_to_publish[2]; ?>% completed</b></h2>
     				</div>
   				</div>
+  				<h2 style="color:#ffff00;margin-top: -55px;margin-bottom: 20px;text-align: center;"><b id="completed" style="text-shadow: 1px 1px 1px #FF0000;"><?php echo $data_to_publish[2]; ?>% completed</b></h2>
+  				</div>
+  				<!-- Mobile Progress bar -->
+  				<div id="mob-progress-bar" class="row" style="text-align: center;">
+					<div id="pie"  class="pie-title-center col-sm-12" data-percent=<?php echo $data_to_publish[2]; ?> style="style=display: inline-block;width: 50%;">
+		 				 <span class="pie-value"><div style="font-size: 18px;font-family: 'Vollkorn', serif;margin-left: 5px;"><?php echo $data_to_publish[2]; ?>% Completed</div></span>
+					</div>
+				</div>
   				<!-- Target details-->
   				<div style="position: relative;">
-  					<h4>The utilization of pensions meant for the differently abled is less than 50% in most states. In Bihar specifically, <a href="http://www.disabilityaffairs.gov.in/upload/uploadfiles/files/disabilityinindia2011data.pdf"> 55% of the intended beneficiaries do not even possess disability certificates</a>, a pre-requisite to receiving their pensions. We hand-hold people in obtaining these certificates and pensions.</h4>
+  					<h4>The utilization of pensions meant for the differently abled is less than 50% in most states. In Bihar specifically, <a href="http://www.disabilityaffairs.gov.in/upload/uploadfiles/files/disabilityinindia2011data.pdf" target="_blank"> 55% of the intended beneficiaries do not even possess disability certificates</a>, a pre-requisite to receiving their pensions. We hand-hold people in obtaining these certificates and pensions.</h4>
   				</div>
   				<br>
 			</div>
@@ -134,62 +151,55 @@
 	</div>
 	<!-- Division 4-->
 	<div class="container-fluid">
-		<hr class="decMargin" id="hr2">
-		<div class="row" style="padding: 0.1em;">
+		<hr class="decMargin " id="hr2" style="border-style: dashed;border-width: 1px;">
+		<div class="row" style="padding: 0.3em;">
 			<div class="col-xs-8" style="">
-				<h4>Estimated number of differently abled citizens in Rajapakar </h4>
+				<h4>Estimated number of differently abled citizens in Rajapakar<a  data-toggle="popover" data-trigger="hover" data-content="hover-content#1"><sup style="color: blue;">ⓘ</sup></a></h4>
 			</div>
-			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
+			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: #ba68c8;top: -1.3em;">
 				<h4 style="color: white;"><b><?php echo $data_to_publish[0]; ?></b></h4>
 			</div>
 			<div id="div4-13" class="col-xs-3"></div>
 		</div>
-		<div class="row" style="padding: 0.1em;">
+		<hr id="line1">
+		<div class="row" style="padding: 0.3em;">
 			<div class="col-xs-8" style="">
-				<h4>Number of differently abled citizens enabled by Seva Setu </h4>
+				<h4>Number of differently abled citizens enabled by Seva Setu</h4>
 			</div>
-			<div id="div4-22" class="col-xs-2 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;"><b><?php echo $data_to_publish[1]; ?> and counting...</b></h4>
+			<div id="div4-22" class="col-xs-2 btn_no" style="background-color: #ba68c8;top: -1.3em;">
+				<h4 ><b style="color: white;"><?php echo $data_to_publish[1]; ?>  and counting..</b><a  data-toggle="popover" data-trigger="hover" data-content=" <?php echo $data_to_publish[2]; ?>% of <?php echo $data_to_publish[0]; ?>" data-placement="top" ><sup style="color: white;">ⓘ</sup></a></h4>
 			</div>
 			<div id="div4-23" class="col-xs-2"></div>
 		</div>
-		<div class="row" style="padding: 0.1em">
-			<div class="col-xs-8" style="">
-				<h4>Percentage (of the estimated people) supported by Seva Setu</h4>
-			</div>
-			<div id="div4-32" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;"><b><?php echo $data_to_publish[2]; ?>%</b></h4>
-			</div>
-			<div id="div4-33" class="col-xs-3"></div>
-		</div>
-		<div class="row" style="padding: 0.1em">
+		<hr id="line2">
+		<div class="row" style="padding: 0.3em">
 			<div class="col-xs-8" style="">
 				<h4>Number of citizens whose pension applications have been submitted</h4>
 			</div>
-			<div id="div4-42" class="col-xs-1 btn_no" style="background-color: #ba68c8;">
-				<h4 style="color: white;"><b><?php echo $data_to_publish[3]; ?></b></h4>
+			<div id="div4-32" class="col-xs-2 btn_no" style="background-color: #ba68c8;top: -1.3em;">
+				<h4 style="color: white;"><b><?php echo (int)(($data_to_publish[3]*$data_to_publish[1])/100); ?></b><a data-toggle="popover" data-trigger="hover" data-content="<?php echo $data_to_publish[3]; ?>% of <?php echo $data_to_publish[1]; ?>" data-placement="top" ><sup style="color: white;">ⓘ</sup></a></h4>
 			</div>
-			<div id="div4-43" class="col-xs-3"></div>
+			<div id="div4-33" class="col-xs-2"></div>
 		</div>
 	</div>
 	<!-- Division 5-->
 	<div class="container-fluid">
-		<hr style="margin: 0.5%;">
+		<hr style="margin: 0.5%;border-style: dashed;border-width: 1px;">
 		<h1 style="text-align:center;" class="decMargin" id="relatedlinks">Related Links</h1>
 		<div class="row">
 
 			<div class="col-sm-4 border" style="text-align: center;padding: 1em;">
-				<h4 style="color: #00695c;">Our effort gets covered by a leading daily</h4>
+				<a href="http://epaper.prabhatkhabar.com/c/18623553" target="_blank"><h4 style="color: #00695c;">Our effort gets covered by a leading daily</h4></a>
 				<a href="http://epaper.prabhatkhabar.com/c/18623553" target="_blank"><img src="img/prabhat_khabar_logo.png" style="height: 7em;"></a>
 			</div>
 
 			<div class="col-sm-4 border" style="text-align: center;padding: 1em;">
-				<h4 style="color: #00695c;">Our crowd funding campaign</h4>
+				<a href="https://www.ketto.org/sevasetu-citizen-care" target="_blank"><h4 style="color: #00695c;">Our crowd funding campaign</h4></a>
 				<a href="https://www.ketto.org/sevasetu-citizen-care" target="_blank"><img src="img/ketto.png" style="height: 7em;"></a>
 			</div>
 
 			<div class="col-sm-4" style="text-align: center;padding: 1em;">
-				<h4 style="color: #00695c;">Notes on our Citizen Care program</h4>
+				<a href="http://sevasetu.org/category/citizen-care/" target="_blank"><h4 style="color: #00695c;">Notes on our Citizen Care program</h4></a>
 				<a href="http://sevasetu.org/category/citizen-care/" target="_blank"><img src="img/notes.png" style="height: 7em;"></a>
 			</div>
 			
@@ -210,20 +220,16 @@
                 </nav>
         </div>
     </footer>
-
 </body>
 	<!-- For device specific changes -->
 <script>
 	$(document).ready(function(){
 		var $window=$(window);
-		console.log($('#progress-bar').css('top'));
-		console.log($('#progress-bar-bg').css('top'));
-		console.log($('body').offset());
-		console.log($(document).scrollTop());
-		$('#progress-bar-bg').css($('#progress-bar').offset());
+		$('#pie').pieChart();
+		$('[data-toggle="popover"]').popover(); 
 		function checkWidth(){
 
-			if ($window.width() <= 640) {
+			if ($window.width() <= 700) {
 				$('#div1-3').removeClass('col-xs-1');
 				$('#div1-3').remove();
 	            $('#div1-1').removeClass('col-xs-1').addClass('col-xs-2');
@@ -232,16 +238,15 @@
 	            $('#div4-22').removeClass('col-xs-2').addClass('col-xs-4');
 	            $('#div4-23').removeClass('col-xs-2');
 	            $('#div4-23').remove();
-	            $('#div4-32').removeClass('col-xs-1').addClass('col-xs-2');
-	            $('#div4-33').removeClass('col-xs-3').addClass('col-xs-2');
-	            $('#div4-42').removeClass('col-xs-1').addClass('col-xs-2');
-	            $('#div4-43').removeClass('col-xs-3').addClass('col-xs-2');
+	            $('#div4-32').removeClass('col-xs-2').addClass('col-xs-4');
+	            $('#div4-33').removeClass('col-xs-2').addClass('col-xs-0');
 	            $('#title').removeClass('decMargin');
 	            $('#hr1').removeClass('decMargin');
 	            $('#areaofwork').removeClass('decMargin');
 	            $('#relatedlinks').removeClass('decMargin');
 	            $('#hr2').removeClass('decMargin');
 	            $('#completed').css("font-size","small");
+	            $('#progress-bar').remove();
         	}
         	else{
         		$('#div1-1_link').remove();
@@ -249,7 +254,12 @@
            		$('#hr1').addClass('decMargin');
             	$('#areaofwork').addClass('decMargin');
             	$('#tilt').remove();
-
+            	$('#line1').remove();
+            	$('#line2').remove();
+            	$('#div4-12').css("top","0em");
+            	$('#div4-22').css("top","0em");
+            	$('#div4-32').css("top","0em");
+            	$('#mob-progress-bar').remove();
         	};
         	
 		}
