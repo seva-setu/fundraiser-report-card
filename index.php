@@ -130,7 +130,7 @@
   				<br>
 			</div>
 			<!-- Division 3-->
-			<div class="col-sm-5 div3" style="">
+			<div class="col-sm-5 div3" style="" id="div3" >
 				<h1 style="text-align:center;" class="decMargin" id="areaofwork">Area of work</h1>
 				<br>
 				<br>
@@ -150,7 +150,7 @@
 		</div>
 	</div>
 	<!-- Division 4-->
-	<div class="container-fluid">
+	<div class="container-fluid" id="div4">
 		<hr class="decMargin " id="hr2" style="border-style: dashed;border-width: 1px;">
 		<div class="row" style="padding: 0.3em;">
 			<div class="col-xs-8" style="">
@@ -247,6 +247,24 @@
 	            $('#hr2').removeClass('decMargin');
 	            $('#completed').css("font-size","small");
 	            $('#progress-bar').remove();
+	            var fadeStart=500 // 100px scroll or less will equiv to 1 opacity
+				    ,fadeUntil=700 // 200px scroll or more will equiv to 0 opacity
+				    ,fading = $('#div3');
+
+				$(window).bind('scroll', function(){
+				    var offset = $(document).scrollTop()
+				        ,opacity=0;
+				   fading.css("background","rgba(235,239,251,"+opacity+")");
+				    if( offset<=fadeStart ){
+				        opacity=0.69;
+				        console.log("op=1");
+				        fading.css("background","rgba(235,239,251,"+opacity+")");
+				    }else if( offset<=fadeUntil ){
+				        opacity=(1-offset/fadeUntil)*2.5;
+				        console.log(opacity);
+				        fading.css("background","rgba(235,239,251,"+opacity+")");
+				    }
+				})
         	}
         	else{
         		$('#div1-1_link').remove();
@@ -263,8 +281,12 @@
         	};
         	
 		}
+
+
+		
 		checkWidth();
 		$(window).resize(checkWidth);
 	});
+
 </script>
 </html>
