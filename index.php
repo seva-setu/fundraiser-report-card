@@ -1,6 +1,6 @@
 
 <?php
-	$url = "https://docs.google.com/spreadsheets/d/1uNS2lhY-MLEkGuSkDDowfWMA21CgIh29sOJ-AtoGmQI/pub?output=csv";
+	$url = "https://docs.google.com/spreadsheets/d/1naps3I3O9I_Ncw-F3wO3Bcmt-WU8uBVujI5jfgDzzAw/pub?output=csv";
 	
 	$data = get_csv_content($url);
 	$is_valid = validate_data($data);
@@ -48,9 +48,19 @@
 	<link rel="stylesheet" href="css/device_specific.css">
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/mob-progress-bar.css">
-  	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script>
+  	$(function() {
+		$('body').prelodr({
+		});
+		$('body').prelodr('in', 'Initializing..');
+	});
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="script/pie-chart.js"></script>
+	<link rel="stylesheet" href="css/prelodr.min.css">
+	<script src="script/prelodr.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>
 		Progress report
@@ -108,19 +118,11 @@
 				<div id="tilt">
 						<div class="centerify" style="color: green;font-size: 25px;font-family: 'Vollkorn', serif;">~~~</div>
 				</div>
-				<!-- Progress bar-->
-				<div id="progress-bar">
-				<div  class="progress" style="width:100%;height:4.4em;">
-					
-    				<div class="progress-bar progress-bar-striped active" id="progress-bar-bg" role="progressbar" aria-valuenow=<?php echo $data_to_publish[2]; ?> aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $data_to_publish[2]; ?>%;background-color:#5e35b1;height: 4.4em;">
-    				</div>
-  				</div>
-  				<h2 style="color:#ffff00;margin-top: -55px;margin-bottom: 20px;text-align: center;"><b id="completed" style="text-shadow: 1px 1px 1px #FF0000;"><?php echo $data_to_publish[2]; ?>% completed</b></h2>
-  				</div>
-  				<!-- Mobile Progress bar -->
+			
+  				<!-- Progress bar -->
   				<div id="mob-progress-bar" class="row" style="text-align: center;">
-					<div id="pie"  class="pie-title-center col-sm-12" data-percent=<?php echo $data_to_publish[2]; ?> style="style=display: inline-block;width: 50%;">
-		 				 <span class="pie-value"><div style="font-size: 18px;font-family: 'Vollkorn', serif;margin-left: 5px;"><?php echo $data_to_publish[2]; ?>% Completed</div></span>
+					<div id="pie"  class="pie-title-center col-sm-12" data-percent=<?php echo $data_to_publish[2]; ?> style="">
+		 				 <span class="pie-value"><div style="font-size: 18px;font-family: 'Vollkorn', serif;"><?php echo $data_to_publish[2]; ?>% Completed</div></span>
 					</div>
 				</div>
   				<!-- Target details-->
@@ -130,7 +132,7 @@
   				<br>
 			</div>
 			<!-- Division 3-->
-			<div class="col-sm-5 div3" style="">
+			<div class="col-sm-5 div3" style="" id="div3" >
 				<h1 style="text-align:center;" class="decMargin" id="areaofwork">Area of work</h1>
 				<br>
 				<br>
@@ -150,7 +152,7 @@
 		</div>
 	</div>
 	<!-- Division 4-->
-	<div class="container-fluid">
+	<div class="container-fluid" id="div4">
 		<hr class="decMargin " id="hr2" style="border-style: dashed;border-width: 1px;">
 		<div class="row" style="padding: 0.3em;">
 			<div class="col-xs-8" style="">
@@ -223,6 +225,7 @@
 </body>
 	<!-- For device specific changes -->
 <script>
+
 	$(document).ready(function(){
 		var $window=$(window);
 		$('#pie').pieChart();
@@ -233,8 +236,8 @@
 				$('#div1-3').removeClass('col-xs-1');
 				$('#div1-3').remove();
 	            $('#div1-1').removeClass('col-xs-1').addClass('col-xs-2');
-	            $('#div4-12').removeClass('col-xs-1').addClass('col-xs-2');
-	            $('#div4-13').removeClass('col-xs-3').addClass('col-xs-2');
+	            $('#div4-12').removeClass('col-xs-1').addClass('col-xs-3');
+	            $('#div4-13').removeClass('col-xs-3').addClass('col-xs-1');
 	            $('#div4-22').removeClass('col-xs-2').addClass('col-xs-4');
 	            $('#div4-23').removeClass('col-xs-2');
 	            $('#div4-23').remove();
@@ -245,8 +248,27 @@
 	            $('#areaofwork').removeClass('decMargin');
 	            $('#relatedlinks').removeClass('decMargin');
 	            $('#hr2').removeClass('decMargin');
+	            $('#pie').removeClass('cir-progbar');
 	            $('#completed').css("font-size","small");
-	            $('#progress-bar').remove();
+	            var fadeStart=500 // 500px scroll or less will equiv to 1 opacity
+				    ,fadeUntil=700 // 700px scroll or more will equiv to 0 opacity
+				    ,fading = $('#div3');
+
+				$(window).bind('scroll', function(){
+				    var offset = $(document).scrollTop()
+				        ,opacity=0;
+				   fading.css("background","rgba(224,224,224,"+opacity+")");
+				    if( offset<=fadeStart ){
+				        opacity=0.69;
+				        console.log("op=1");
+				        fading.css("background","rgba(224,224,224,"+opacity+")");
+				    }else if( offset<=fadeUntil ){
+				        opacity=(1-offset/fadeUntil)*2.5;
+				        console.log(opacity);
+				        fading.css("background","rgba(224,224,224,"+opacity+")");
+				    }
+				})
+				$('body').prelodr('out');
         	}
         	else{
         		$('#div1-1_link').remove();
@@ -259,12 +281,17 @@
             	$('#div4-12').css("top","0em");
             	$('#div4-22').css("top","0em");
             	$('#div4-32').css("top","0em");
-            	$('#mob-progress-bar').remove();
+            	$('body').prelodr('out');
+            	//$('#mob-progress-bar').remove();
         	};
         	
 		}
+
+
+		
 		checkWidth();
 		$(window).resize(checkWidth);
 	});
+
 </script>
 </html>
