@@ -48,9 +48,19 @@
 	<link rel="stylesheet" href="css/device_specific.css">
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/mob-progress-bar.css">
-  	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script>
+  	$(function() {
+		$('body').prelodr({
+		});
+		$('body').prelodr('in', 'Initializing..');
+	});
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="script/pie-chart.js"></script>
+	<link rel="stylesheet" href="css/prelodr.min.css">
+	<script src="script/prelodr.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>
 		Progress report
@@ -111,7 +121,7 @@
 			
   				<!-- Progress bar -->
   				<div id="mob-progress-bar" class="row" style="text-align: center;">
-					<div id="pie"  class="pie-title-center col-sm-12 cir-progbar" data-percent=<?php echo $data_to_publish[2]; ?> style="">
+					<div id="pie"  class="pie-title-center col-sm-12" data-percent=<?php echo $data_to_publish[2]; ?> style="">
 		 				 <span class="pie-value"><div style="font-size: 18px;font-family: 'Vollkorn', serif;"><?php echo $data_to_publish[2]; ?>% Completed</div></span>
 					</div>
 				</div>
@@ -215,6 +225,7 @@
 </body>
 	<!-- For device specific changes -->
 <script>
+
 	$(document).ready(function(){
 		var $window=$(window);
 		$('#pie').pieChart();
@@ -225,8 +236,8 @@
 				$('#div1-3').removeClass('col-xs-1');
 				$('#div1-3').remove();
 	            $('#div1-1').removeClass('col-xs-1').addClass('col-xs-2');
-	            $('#div4-12').removeClass('col-xs-1').addClass('col-xs-2');
-	            $('#div4-13').removeClass('col-xs-3').addClass('col-xs-2');
+	            $('#div4-12').removeClass('col-xs-1').addClass('col-xs-3');
+	            $('#div4-13').removeClass('col-xs-3').addClass('col-xs-1');
 	            $('#div4-22').removeClass('col-xs-2').addClass('col-xs-4');
 	            $('#div4-23').removeClass('col-xs-2');
 	            $('#div4-23').remove();
@@ -246,17 +257,18 @@
 				$(window).bind('scroll', function(){
 				    var offset = $(document).scrollTop()
 				        ,opacity=0;
-				   fading.css("background","rgba(30,75,206,"+opacity+")");
+				   fading.css("background","rgba(224,224,224,"+opacity+")");
 				    if( offset<=fadeStart ){
 				        opacity=0.69;
 				        console.log("op=1");
-				        fading.css("background","rgba(30,75,206,"+opacity+")");
+				        fading.css("background","rgba(224,224,224,"+opacity+")");
 				    }else if( offset<=fadeUntil ){
 				        opacity=(1-offset/fadeUntil)*2.5;
 				        console.log(opacity);
-				        fading.css("background","rgba(30,75,206,"+opacity+")");
+				        fading.css("background","rgba(224,224,224,"+opacity+")");
 				    }
 				})
+				$('body').prelodr('out');
         	}
         	else{
         		$('#div1-1_link').remove();
@@ -269,6 +281,7 @@
             	$('#div4-12').css("top","0em");
             	$('#div4-22').css("top","0em");
             	$('#div4-32').css("top","0em");
+            	$('body').prelodr('out');
             	//$('#mob-progress-bar').remove();
         	};
         	
