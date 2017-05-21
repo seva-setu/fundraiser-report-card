@@ -1,6 +1,6 @@
 
 <?php
-	$url = "https://docs.google.com/spreadsheets/d/1uNS2lhY-MLEkGuSkDDowfWMA21CgIh29sOJ-AtoGmQI/pub?output=csv";
+	$url = "https://docs.google.com/spreadsheets/d/1naps3I3O9I_Ncw-F3wO3Bcmt-WU8uBVujI5jfgDzzAw/pub?output=csv";
 	
 	$data = get_csv_content($url);
 	$is_valid = validate_data($data);
