@@ -108,19 +108,11 @@
 				<div id="tilt">
 						<div class="centerify" style="color: green;font-size: 25px;font-family: 'Vollkorn', serif;">~~~</div>
 				</div>
-				<!-- Progress bar-->
-				<div id="progress-bar">
-				<div  class="progress" style="width:100%;height:4.4em;">
-					
-    				<div class="progress-bar progress-bar-striped active" id="progress-bar-bg" role="progressbar" aria-valuenow=<?php echo $data_to_publish[2]; ?> aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $data_to_publish[2]; ?>%;background-color:#5e35b1;height: 4.4em;">
-    				</div>
-  				</div>
-  				<h2 style="color:#ffff00;margin-top: -55px;margin-bottom: 20px;text-align: center;"><b id="completed" style="text-shadow: 1px 1px 1px #FF0000;"><?php echo $data_to_publish[2]; ?>% completed</b></h2>
-  				</div>
-  				<!-- Mobile Progress bar -->
+			
+  				<!-- Progress bar -->
   				<div id="mob-progress-bar" class="row" style="text-align: center;">
-					<div id="pie"  class="pie-title-center col-sm-12" data-percent=<?php echo $data_to_publish[2]; ?> style="style=display: inline-block;width: 50%;">
-		 				 <span class="pie-value"><div style="font-size: 18px;font-family: 'Vollkorn', serif;margin-left: 5px;"><?php echo $data_to_publish[2]; ?>% Completed</div></span>
+					<div id="pie"  class="pie-title-center col-sm-12 cir-progbar" data-percent=<?php echo $data_to_publish[2]; ?> style="">
+		 				 <span class="pie-value"><div style="font-size: 18px;font-family: 'Vollkorn', serif;"><?php echo $data_to_publish[2]; ?>% Completed</div></span>
 					</div>
 				</div>
   				<!-- Target details-->
@@ -245,24 +237,24 @@
 	            $('#areaofwork').removeClass('decMargin');
 	            $('#relatedlinks').removeClass('decMargin');
 	            $('#hr2').removeClass('decMargin');
+	            $('#pie').removeClass('cir-progbar');
 	            $('#completed').css("font-size","small");
-	            $('#progress-bar').remove();
-	            var fadeStart=500 // 100px scroll or less will equiv to 1 opacity
-				    ,fadeUntil=700 // 200px scroll or more will equiv to 0 opacity
+	            var fadeStart=500 // 500px scroll or less will equiv to 1 opacity
+				    ,fadeUntil=700 // 700px scroll or more will equiv to 0 opacity
 				    ,fading = $('#div3');
 
 				$(window).bind('scroll', function(){
 				    var offset = $(document).scrollTop()
 				        ,opacity=0;
-				   fading.css("background","rgba(235,239,251,"+opacity+")");
+				   fading.css("background","rgba(30,75,206,"+opacity+")");
 				    if( offset<=fadeStart ){
 				        opacity=0.69;
 				        console.log("op=1");
-				        fading.css("background","rgba(235,239,251,"+opacity+")");
+				        fading.css("background","rgba(30,75,206,"+opacity+")");
 				    }else if( offset<=fadeUntil ){
 				        opacity=(1-offset/fadeUntil)*2.5;
 				        console.log(opacity);
-				        fading.css("background","rgba(235,239,251,"+opacity+")");
+				        fading.css("background","rgba(30,75,206,"+opacity+")");
 				    }
 				})
         	}
@@ -277,7 +269,7 @@
             	$('#div4-12').css("top","0em");
             	$('#div4-22').css("top","0em");
             	$('#div4-32').css("top","0em");
-            	$('#mob-progress-bar').remove();
+            	//$('#mob-progress-bar').remove();
         	};
         	
 		}
