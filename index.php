@@ -3,15 +3,18 @@
 	$url = "https://docs.google.com/spreadsheets/d/1naps3I3O9I_Ncw-F3wO3Bcmt-WU8uBVujI5jfgDzzAw/pub?output=csv";
 	
 	$data = get_csv_content($url);
+	
 	$is_valid = validate_data($data);
 	
-	$data_to_publish = array(1014, 817, 93, 6);
+	$data_to_publish = array(1014, 817, 93, 6,0);
 	
 	if($is_valid){
 		$data_to_publish[0]=$data[0][2];
 		$data_to_publish[1]=$data[1][2];
 		$data_to_publish[2]=$data[2][2];
 		$data_to_publish[3]=$data[4][2];
+		$data_to_publish[4]=$data[5][2];
+		
 		$var=remove_html_tags($data_to_publish);
 				
 	}
@@ -71,6 +74,14 @@
 	.popover{
 		background-color: black;
 		color: white;
+	}
+	.message{
+    display:none;
+    color:white;
+    background:black;
+    position:absolute;
+    border-radius: 0.5em;
+	padding: 0.5em;
 	}
 	</style>
 
@@ -156,9 +167,9 @@
 		<hr class="decMargin " id="hr2" style="border-style: dashed;border-width: 1px;">
 		<div class="row" style="padding: 0.3em;">
 			<div class="col-xs-8" style="">
-				<h4>Estimated number of differently abled citizens in Rajapakar<a  data-toggle="popover" data-trigger="hover" data-content="hover-content#1"><sup style="color: blue;">ⓘ</sup></a></h4>
+				<h4>Estimated number of differently abled citizens in Rajapakar<a id="anchor"><sup style="color: blue;">ⓘ</sup></a><p id="message" class="message"><?php echo $data_to_publish[4];?> </p></h4>
 			</div>
-			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: #ba68c8;top: -1.3em;">
+			<div id="div4-12" class="col-xs-1 btn_no" style="background-color: #ba68c8;top: -1.3em;margin-left: -0.5em;">
 				<h4 style="color: white;"><b><?php echo $data_to_publish[0]; ?></b></h4>
 			</div>
 			<div id="div4-13" class="col-xs-3"></div>
@@ -168,8 +179,8 @@
 			<div class="col-xs-8" style="">
 				<h4>Number of differently abled citizens enabled by Seva Setu</h4>
 			</div>
-			<div id="div4-22" class="col-xs-2 btn_no" style="background-color: #ba68c8;top: -1.3em;">
-				<h4 ><b style="color: white;"><?php echo $data_to_publish[1]; ?>  and counting..</b><a  data-toggle="popover" data-trigger="hover" data-content=" <?php echo $data_to_publish[2]; ?>% of <?php echo $data_to_publish[0]; ?>" data-placement="top" ><sup style="color: white;">ⓘ</sup></a></h4>
+			<div id="div4-22" class="col-xs-2 btn_no" style="background-color: #ba68c8;top: -1.3em;margin-left: -0.5em;">
+				<h4 ><b style="color: white;"><?php echo $data_to_publish[1]; ?>  and counting</b><a  data-toggle="popover" data-trigger="hover" data-content=" <?php echo $data_to_publish[2]; ?>% of <?php echo $data_to_publish[0]; ?>" data-placement="top" ><sup style="color: white;">ⓘ</sup></a></h4>
 			</div>
 			<div id="div4-23" class="col-xs-2"></div>
 		</div>
@@ -178,7 +189,7 @@
 			<div class="col-xs-8" style="">
 				<h4>Number of citizens whose pension applications have been submitted</h4>
 			</div>
-			<div id="div4-32" class="col-xs-2 btn_no" style="background-color: #ba68c8;top: -1.3em;">
+			<div id="div4-32" class="col-xs-2 btn_no" style="background-color: #ba68c8;top: -1.3em;margin-left: -0.5em;">
 				<h4 style="color: white;"><b><?php echo (int)(($data_to_publish[3]*$data_to_publish[1])/100); ?></b><a data-toggle="popover" data-trigger="hover" data-content="<?php echo $data_to_publish[3]; ?>% of <?php echo $data_to_publish[1]; ?>" data-placement="top" ><sup style="color: white;">ⓘ</sup></a></h4>
 			</div>
 			<div id="div4-33" class="col-xs-2"></div>
@@ -230,6 +241,15 @@
 		var $window=$(window);
 		$('#pie').pieChart();
 		$('[data-toggle="popover"]').popover(); 
+		$('#anchor').hover(function(){
+			$('#message').css('display','block');
+			$('#message').css('z-index','10');
+				}
+				,function(){
+					setTimeout(function(){$('#message').css('display','none');},3000);
+				
+			});
+		
 		function checkWidth(){
 
 			if ($window.width() <= 700) {
